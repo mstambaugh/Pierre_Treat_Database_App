@@ -26,7 +26,7 @@ namespace PierreTreats
             services.AddMvc();
 
             services.AddEntityFrameworkMySql()
-                .AddDbContext<ToDoListContext>(options => options
+                .AddDbContext<PierreTreatsContext>(options => options
                 .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
             // services.AddIdentity<ApplicationUser, IdentityRole>()
