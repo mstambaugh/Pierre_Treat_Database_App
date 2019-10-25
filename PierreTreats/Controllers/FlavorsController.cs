@@ -16,13 +16,12 @@ namespace PierreTreats.Controllers
         private readonly PierreTreatsContext _db;
         public FlavorsController(PierreTreatsContext db)
         {
-            _db = _db;
+            _db = db;
         }
         public ActionResult Index()
         {
             return View(_db.Flavors.ToList());
         }
-        
     }
 
 }

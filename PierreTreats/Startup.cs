@@ -29,18 +29,18 @@ namespace PierreTreats
                 .AddDbContext<PierreTreatsContext>(options => options
                 .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
-            // services.AddIdentity<ApplicationUser, IdentityRole>()
-            //     .AddEntityFrameworkStores<ToDoListContext>()
-            //     .AddDefaultTokenProviders();
-            // services.Configure<IdentityOptions>(options =>
-            // {
-            //     options.Password.RequireDigit = false;
-            //     options.Password.RequiredLength = 0;
-            //     options.Password.RequireLowercase = false;
-            //     options.Password.RequireNonAlphanumeric = false;
-            //     options.Password.RequireUppercase = false;
-            //     options.Password.RequiredUniqueChars = 0;
-            // });
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<PierreTreatsContext>()
+                .AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 0;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredUniqueChars = 0;
+            });
         }
 
         public void Configure(IApplicationBuilder app)
@@ -49,7 +49,7 @@ namespace PierreTreats
 
             app.UseDeveloperExceptionPage();
 
-            // app.UseAuthentication();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
