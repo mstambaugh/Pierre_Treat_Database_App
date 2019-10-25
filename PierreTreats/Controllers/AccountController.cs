@@ -66,7 +66,7 @@ namespace PierreTreats.Controllers
         public async Task<ActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Logout");
+            return RedirectToAction("Index");
         }
     }
 }
