@@ -9,7 +9,7 @@ namespace PierreTreats.Models
             this.Treats = new HashSet<FlavorTreat>();
         }
         
-        public string FlavorId { get; set; }
+        public int FlavorId { get; set; }
         public string FlavorNotes { get; set; }
         public virtual ApplicationUser User { get; set; }
 

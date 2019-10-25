@@ -4,7 +4,7 @@
 @using PierreTreats.Models
 @model IEnumerable<PierreTreats.Models.Flavor>
 
-<h1>Flavors</h1>
+<h1>@User.Identity.Name documented flavor notes</h1>
 
 @if (Model.Any())
 {
@@ -17,5 +17,8 @@
 } 
 else
 {
-    <h3>No items have been added yet!</h3>
+    <h3>No flavors have been added yet! Put the food in your mouth and then </h3>
 }
+<p>@Html.ActionLink("Add new flavor", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
