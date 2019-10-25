@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using PierreTreats.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +18,11 @@ namespace PierreTreats.Controllers
         {
             _db = _db;
         }
-
+        public ActionResult Index()
+        {
+            return View(_db.Flavors.ToList());
+        }
+        
     }
 
 }
